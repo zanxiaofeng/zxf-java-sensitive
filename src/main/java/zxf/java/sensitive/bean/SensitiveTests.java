@@ -1,7 +1,10 @@
-package zxf.java.sensitive;
+package zxf.java.sensitive.bean;
 
 import com.github.houbb.sensitive.core.api.SensitiveUtil;
 import lombok.extern.slf4j.Slf4j;
+import zxf.java.sensitive.bean.model.Order;
+import zxf.java.sensitive.bean.model.Product;
+import zxf.java.sensitive.bean.model.User;
 
 import java.util.Arrays;
 

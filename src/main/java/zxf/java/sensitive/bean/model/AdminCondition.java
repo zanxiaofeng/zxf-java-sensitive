@@ -1,4 +1,4 @@
-package zxf.java.sensitive;
+package zxf.java.sensitive.bean.model;
 
 import com.github.houbb.sensitive.api.ICondition;
 import com.github.houbb.sensitive.api.IContext;

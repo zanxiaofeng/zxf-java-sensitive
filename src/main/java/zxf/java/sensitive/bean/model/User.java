@@ -1,4 +1,4 @@
-package zxf.java.sensitive;
+package zxf.java.sensitive.bean.model;
 
 import com.github.houbb.sensitive.annotation.Sensitive;
 import com.github.houbb.sensitive.core.api.strategory.StrategyCardId;
