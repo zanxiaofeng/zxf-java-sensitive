@@ -1,14 +1,12 @@
 package zxf.java.sensitive.bean;
 
 import com.github.houbb.sensitive.core.api.SensitiveUtil;
-import lombok.extern.log4j.Log4j2;
 import zxf.java.sensitive.bean.model.Order;
 import zxf.java.sensitive.bean.model.Product;
 import zxf.java.sensitive.bean.model.User;
 
 import java.util.Arrays;
 
-@Log4j2
 public class SensitiveTests {
     public static void main(String[] args) {
         User user = new User();
@@ -20,12 +18,10 @@ public class SensitiveTests {
         user.setAccount2("456-677-7887");
         user.setPhone("13812345678");
 
-        log.info("##{}", user);
         System.out.println(SensitiveUtil.desCopy(user).toString());
         System.out.println(SensitiveUtil.desJson(user));
 
         user.setAdmin(true);
-        log.info("##{}", user);
         System.out.println(SensitiveUtil.desCopy(user).toString());
         System.out.println(SensitiveUtil.desJson(user));
 
@@ -37,7 +33,6 @@ public class SensitiveTests {
         order.setOrderCode("3333333");
         order.setUser(user);
         order.setProducts(Arrays.asList(product));
-        log.info("##{}", order);
         System.out.println(SensitiveUtil.desCopy(order).toString());
         System.out.println(SensitiveUtil.desJson(order));
     }
