@@ -1,28 +1,33 @@
 package zxf.java.sensitive.bean;
 
 import com.github.houbb.sensitive.core.api.SensitiveUtil;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import zxf.java.sensitive.bean.model.Order;
 import zxf.java.sensitive.bean.model.Product;
 import zxf.java.sensitive.bean.model.User;
 
 import java.util.Arrays;
 
-@Slf4j
+@Log4j2
 public class SensitiveTests {
     public static void main(String[] args) {
         User user = new User();
         user.setUsername("张三");
-        user.setIdCard("123456789012345678");
+        user.setId("123456789012345678");
         user.setPassword("123456");
+        user.setEmail("abc@163.com");
+        user.setAccount1("456-677-8999");
+        user.setAccount2("456-677-7887");
         user.setPhone("13812345678");
 
-        log.info("User: {}", user);
+        log.info("##{}", user);
         System.out.println(SensitiveUtil.desCopy(user).toString());
+        System.out.println(SensitiveUtil.desJson(user));
 
         user.setAdmin(true);
-        log.info("User: {}", user);
+        log.info("##{}", user);
         System.out.println(SensitiveUtil.desCopy(user).toString());
+        System.out.println(SensitiveUtil.desJson(user));
 
         Product product = new Product();
         product.setName("手机");
@@ -32,7 +37,8 @@ public class SensitiveTests {
         order.setOrderCode("3333333");
         order.setUser(user);
         order.setProducts(Arrays.asList(product));
-        log.info("Order: {}", order);
+        log.info("##{}", order);
         System.out.println(SensitiveUtil.desCopy(order).toString());
+        System.out.println(SensitiveUtil.desJson(order));
     }
 }
